@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/witCommunication2/simulations/results/wit2-*.vec"/>
+    <inputs name="/witCommunication2/simulations/results/wit2-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="Wit3">
+      <items xsi:type="scave:Add" filterPattern="module(witNetwork.wit[3])" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="" lineNameFormat=""/>
+    </datasets>
+    <datasets name="wit5">
+      <items xsi:type="scave:Add" filterPattern="module(witNetwork.wit[5])" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="Wit 5 Time" lineNameFormat="${module}">
+        <properties name="X.Axis.Title" value="simulation Time(ms)"/>
+        <properties name="Y.Axis.Title" value="Time(ms)"/>
+        <properties name="Y.Axis.Log" value="true"/>
+      </items>
+    </datasets>
+    <datasets name="Wit5 difference">
+      <items xsi:type="scave:Add" filterPattern="module(witNetwork.wit[8]) AND name(difference)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="" lineNameFormat=""/>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.1 //@datasets/@datasets.1/@items.1 //@datasets/@datasets.2/@items.1"/>
+  </chartSheets>
+</scave:Analysis>
